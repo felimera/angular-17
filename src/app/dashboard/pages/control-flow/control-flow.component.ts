@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export default class ControlFlowComponent {
 
+  public showContent = signal(false);
+
+  public toggleContent(): void {
+    this.showContent.update(value => !value);
+  }
 }
